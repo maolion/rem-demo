@@ -1,0 +1,20 @@
+{
+  "name": "rem-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "lessc base.less > base.css & lessc index.less > index.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maolion/rem-demo.git"
+  },
+  "author": "lion",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maolion/rem-demo/issues"
+  },
+  "homepage": "https://github.com/maolion/rem-demo#readme"
+}
