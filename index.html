@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="applicable-device" content="mobile" />
+        <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <link rel="stylesheet" href="./base.css" />
+        <link rel="stylesheet" href="./index.css" />
+        <script>
+        var 
+            PAGE_MAX_WIDTH = 640,
+            BASE_FONT_SIZE = 50
+        ;
+
+        //在窗口各宽情况时，动态计算出html的font-size
+        (function(){
+            var 
+                DOC_ROOT_STYLE = document.documentElement.style
+            ;
+            var timer = null;
+            
+            window.addEventListener('load', resizeFontSize);
+            window.addEventListener('resize', function() {
+                clearTimeout(timer);
+                timer = setTimeout(resizeFontSize, 100);
+            });
+            timer = setTimeout(resizeFontSize, 300);
+            resizeFontSize();
+            
+            function resizeFontSize() {
+                DOC_ROOT_STYLE.fontSize = Math.min( (document.documentElement.clientWidth) / PAGE_MAX_WIDTH * BASE_FONT_SIZE, BASE_FONT_SIZE) + 'px';
+            }
+        })();
+        </script>
+        
+    </head>
+    <body>
+        <div id="test">
+            <div id="test2">
+            </div>
+            <div id="test3">
+            </div>
+        </div>
+    </body>
+</html>
